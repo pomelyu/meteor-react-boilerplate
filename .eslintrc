@@ -1,0 +1,56 @@
+{
+	"plugins": [
+	    "meteor"
+	],
+	"extends": [
+	    "airbnb",
+		"plugin:meteor/recommended",
+		"eslint:recommended"
+	],
+	"parser": "babel-eslint",
+	"parserOptions": {
+		"allowImportExportEverywhere": true,
+		"ecmaFeatures": {
+		  "jsx": true,
+		  "modules": true
+		}
+	},
+	"rules": {
+		"import/extensions": ["off", "never"],
+		"import/no-extraneous-dependencies": 0,
+    "meteor/eventmap-params": [
+        2, { "templateInstanceParamName": "instance" }
+    ],
+    "import/no-unresolved": [
+        2, { "ignore": ["^meteor/"] }
+    ],
+    // enable this._variable (used many times to refer the this._id)
+    "no-underscore-dangle": ["error", { "allowAfterThis": true }],
+    // setup the indentation to two spaces
+    "indent": ["error", 2],
+    // meteor uses globals and includes a lot
+    "no-unused-vars": 1,
+    // enable console
+    "no-console": 0,
+    // disable anonymous function
+    "func-names": [1, "as-needed"],
+    // enforce newline in end of the file
+    "eol-last": ["error", "always"]
+	},
+	"env": {
+      	// diable meteor global variable
+	    // "meteor": true,
+	    "node": true,
+	    "browser": true
+	},
+	// ignore some undeclared global variables and methods
+	// used by Meteor
+	"globals": {
+	    "describe": false,
+	    "it": false,
+	    "before": false,
+	    "beforeEach": false,
+	    "after": false,
+	    "afterEach": false
+	}
+}
