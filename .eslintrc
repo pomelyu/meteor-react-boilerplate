@@ -41,7 +41,8 @@
       	// diable meteor global variable
 	    // "meteor": true,
 	    "node": true,
-	    "browser": true
+		"browser": true,
+		"mocha": true,
 	},
 	// ignore some undeclared global variables and methods
 	// used by Meteor
