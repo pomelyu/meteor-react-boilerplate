@@ -23,6 +23,16 @@ Meteor.methods({
 
   'score_sheets.increase': function(sheetId) {
     ScoreSheet.update({ _id: sheetId }, { $inc: { score: 1 } });
+
+    // if (Meteor.isClient) {
+    //   ScoreSheet.update({ _id: sheetId }, { $inc: { score: 1 } });
+    // }
+
+    // if (Meteor.isServer) {
+    //   const delay2second = Meteor.wrapAsync((callback) => setTimeout(callback, 2000));
+    //   delay2second();
+    //   ScoreSheet.update({ _id: sheetId }, { $inc: { score: -1 } });
+    // }
   },
 
   'score_sheets.decrease': function(sheetId) {
