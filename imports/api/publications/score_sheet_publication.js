@@ -17,6 +17,7 @@ publishComposite('score_sheets.all.currentType', {
   children: [{
     find(state) {
       const { currentType } = state;
+      console.log('Change to type:', currentType);
       return ScoreSheet.find({ type: currentType });
     }
   }],

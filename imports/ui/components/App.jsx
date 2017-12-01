@@ -9,15 +9,15 @@ const styles = {
     padding: 20,
   },
   account: {
-    width: '70%',
+    width: '100%',
     height: 20,
   },
   navigator: {
-    width: '70%',
+    width: '100%',
     marginTop: 10,
   },
   scoreList: {
-    width: '70%',
+    width: '100%',
     marginTop: 10,
   },
 }

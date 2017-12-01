@@ -5,8 +5,12 @@ import UserState from '../../collections/user_state.js';
 import ScoreSheets from '../../collections/score_sheets.js';
 import ScoreList from '../components/ScoreList.jsx';
 
+// console.log('Subscribe', 'score_sheets.all.currentType')
+// Meteor.subscribe('score_sheets.all.currentType');
+
 const mapTrackerToProps = withTracker(() => {
   const { currentType } = UserState.findOne({ _id: Meteor.userId }) || { currentType: 'history' };
+  console.log('Subscribe', 'score_sheets.all', 'with', currentType);
   Meteor.subscribe('score_sheets.all', currentType);
 
   const scoreSheets = ScoreSheets.find({}, { sort: { score: -1 } }).fetch();
