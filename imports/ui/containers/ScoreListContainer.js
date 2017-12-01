@@ -7,9 +7,9 @@ import ScoreList from '../components/ScoreList.jsx';
 
 const mapTrackerToProps = withTracker(() => {
   const { currentType } = UserState.findOne({ _id: Meteor.userId }) || { currentType: 'history' };
-  Meteor.subscribe('score_sheets.sorted', currentType);
+  Meteor.subscribe('score_sheets.all', currentType);
 
-  const scoreSheets = ScoreSheets.find({}).fetch();
+  const scoreSheets = ScoreSheets.find({}, { sort: { score: -1 } }).fetch();
   scoreSheets.forEach(sheet => sheet.disabled = (sheet.recorder !== Meteor.userId()));
 
   return {
