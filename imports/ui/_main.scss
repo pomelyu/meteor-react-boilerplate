@@ -1,0 +1,15 @@
+$red: red;
+
+// the default font-size is typically 16px
+// hence 62.5% => 16px * 62.5 = 10px
+// 1rem = 10px
+html {
+  font-size: 62.5%;
+}
+
+* {
+  color: $red;
+  font: {
+    size: 2.0rem;
+  }
+}
